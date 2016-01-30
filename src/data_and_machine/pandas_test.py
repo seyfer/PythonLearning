@@ -7,10 +7,10 @@ def init():
 
 
 def test():
-    print(data[:10])
+    # print(data[:10])
     print(data.head(10))
-    print(data['Pclass'])
-    print(data['Pclass'].value_counts())
+    # print(data['Pclass'])
+    # print(data['Pclass'].value_counts())
 
 
 # male 577 female 314
@@ -55,16 +55,39 @@ def task3():
     # print(100. * classesData.value_counts() / len(classesData))
     # print(classesData.value_counts(normalize=True))
 
+
 def task4():
+    passAges = data['Age']
+    print(passAges)
+
+    # 29.6991176471
+    print(passAges.mean())
+
+    # 28.0
+    print(passAges.median())
     return
+
+
+def task5():
+    sibSpAndParch = data[['SibSp', 'Parch']];
+    print(sibSpAndParch)
+
+    # SibSp  1.000000  0.414838
+    # Parch  0.414838  1.000000
+    print(sibSpAndParch.corr())
+
 
 # -----------------
 
 data = init()
-# test()
+test()
 
 # task1()
 
 # task2()
 
 # task3()
+
+# task4()
+
+# task5()
