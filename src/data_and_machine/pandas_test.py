@@ -20,14 +20,24 @@ def task1():
 
 # survived 342 not survived 549
 def task2():
-    print(data['Survived'].value_counts())
+    survivedData = data['Survived'];
+    print(survivedData.value_counts())
 
-    # 549 100
-    # 342 x
+    # 0    549
+    # 1    342
+    # 891 100
+    # 549 x
     # 62.2950819672
-    survived = data['Survived'].value_counts()[1];
-    notSurvived = data['Survived'].value_counts()[0];
-    print(survived * 100 / notSurvived)
+    # 61.6161 38.3838
+    notSurvived = survivedData.value_counts()[0];
+    survived = survivedData.value_counts()[1];
+    all = (survived + notSurvived)
+
+    print([notSurvived, survived, all])
+
+    print(survived * 100 / all)
+
+    print(100. * survivedData.value_counts() / len(survivedData))
 
 
 def task3():
@@ -84,7 +94,7 @@ test()
 
 # task1()
 
-# task2()
+task2()
 
 # task3()
 
